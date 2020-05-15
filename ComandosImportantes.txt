@@ -1,0 +1,11 @@
+Usando .Net en visual code
+
+*Iniciar un proyecto: dotnet new console
+
+*Correr: dotnet run
+
+*Instalar el package de sqlclient: dotnet add package System.Data.SqlClient --version 4.8.1
+
+*Intalar  el package de Cache: dotnet add package System.Runtime.Caching --version 4.7.0
+
+*dotnet add package System.Diagnostics.Process --version 4.3.0 // este no es necesario
