@@ -8,20 +8,6 @@ namespace Connection
 {
     class Program
     {
-        
-        /*public void runTask(){
-            int amount = 10;
-            Task [] threadArray = new Task [amount];
-
-            for (int i = 0; i < amount; i++){
-                threadArray[i]=Task.Factory.StartNew(()=>DbQuery.getInstance("Pool").query("waitfor delay '00:00:04'"));
-            }
-
-            Task.WaitAll(threadArray);
-
-            Console.WriteLine("Hola");
-        }*/
-
         static void Main(string[] args)
         {
             int amount = 28;
