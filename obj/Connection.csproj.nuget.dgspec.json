@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\Caso3\\Connection\\Connection.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\C#\\Caso3\\Connection\\Connection.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\Caso3\\Connection\\Connection.csproj": {
+    "C:\\Users\\DELL\\Desktop\\C#\\Caso3\\Connection\\Connection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Caso3\\Connection\\Connection.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\C#\\Caso3\\Connection\\Connection.csproj",
         "projectName": "Connection",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Caso3\\Connection\\Connection.csproj",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\C#\\Caso3\\Connection\\Connection.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Caso3\\Connection\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\C#\\Caso3\\Connection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             },
             "System.Diagnostics.Process": {
               "target": "Package",

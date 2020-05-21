@@ -19,7 +19,7 @@ class DbQuery{
         this.type=type;
 
         if(type=="Pool"){
-            connetionString = "Data Source=127.0.0.1;Initial Catalog=Caso2Granel;User ID=fab;Password=fabianceciliano;Min Pool Size=1;Max Pool Size=3;Connect Timeout=60";
+            connetionString = "Data Source=127.0.0.1;Initial Catalog=Caso2Granel;User ID=fab;Password=fabianceciliano;Min Pool Size=1;Max Pool Size=7;Connect Timeout=60";
         }else{
             connetionString = "Data Source=127.0.0.1;Initial Catalog=Caso2Granel;User ID=fab;Password=fabianceciliano;Pooling=false;Connect Timeout=60";
         }
@@ -47,24 +47,26 @@ class DbQuery{
         try
         {
             conection.Open();
-                Console.WriteLine("Start "+Thread.CurrentThread.Name);
+            
+                //Console.WriteLine("Start "+Thread.CurrentThread.Name); //Debbuging
+            
             SqlCommand command = new SqlCommand(queryString,conection);
             SqlDataReader dataReader = command.ExecuteReader();//command.ExecuteNonQuery();
-            while (dataReader.Read()){
-                //Console.WriteLine("Reading");
-            }
-            cache.Set(queryString,dataReader.ToString(),null);
-            dataReader.Close();
-                Console.WriteLine("Ready "+Thread.CurrentThread.Name);
-            conection.Close();
 
             saveStatistics(DateTime.Now.Subtract(frs)," -> Read from Db");
+            
+            cache.Set(queryString,dataReader.ToString(),null);
+            dataReader.Close();
+            
+                //Console.WriteLine("Ready "+Thread.CurrentThread.Name); //Debbuging
 
         }
         catch (System.Exception x)
         {
             safeError(Thread.CurrentThread.Name+": "+"Error");
             Console.WriteLine(x);
+        }finally{
+            conection.Close();
         }
 
         Thread.Sleep(0);
@@ -84,7 +86,7 @@ class DbQuery{
                     
                 }else
                 {
-                    Console.WriteLine("Read from cache "+Thread.CurrentThread.Name);
+                    //Console.WriteLine("Read from cache "+Thread.CurrentThread.Name); //Debbuging
                     saveStatistics(DateTime.Now.Subtract(frs)," -> Read from cache");
                 }
                 
@@ -92,7 +94,7 @@ class DbQuery{
             
         }else
         {
-            Console.WriteLine("Read from cache "+Thread.CurrentThread.Name);
+            //Console.WriteLine("Read from cache "+Thread.CurrentThread.Name); //Debbuging
             saveStatistics(DateTime.Now.Subtract(frs)," -> Read from cache");
         }
     }
